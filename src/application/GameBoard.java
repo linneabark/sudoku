@@ -58,10 +58,18 @@ public class GameBoard {
 
     // modifies a value in the player array
     public void modifyPlayer(int val, int row, int col) {
-        if(val >=0 && val <= 9) // only values from 0 to 9 inclusive are permitted
-            player[row][col] = val;
-        else // print out an error message
-            System.out.println("Value passed to player falls out of range");
+        // check if the initial array has a zero (treated as empty square)
+        // in the position we want to put in a number in the player array
+        // this way we avoid intersections between the two
+        if (initial[row][col] == 0) {
+            if(val >=0 && val <= 9) // only values from 0 to 9 inclusive are permitted
+                player[row][col] = val;
+            else{ // print out an error message
+                System.out.println("Value passed to player falls out of range");
+            }
+        }
     }
+
+
 
 }

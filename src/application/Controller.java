@@ -114,6 +114,30 @@ public class Controller implements Initializable {
                 }
             }
         }
+
+        // draw the players numbers from our GameBoard instance
+        int[][] player = gameboard.getPlayer();
+        for(int row = 0; row<9; row++) {
+            for(int col = 0; col<9; col++) {
+                // finds the y position of the cell, by multiplying the row
+                // number by 50, which is the height of a row in pixels
+                // then adds 2, to add some offset
+                int position_y = row * 50 + 30;
+                // finds the x position of the cell, by multiplying the column
+                // number by 50, which is the width of a column in pixels
+                // then add 2, to add some offset
+                int position_x = col * 50 + 20;
+                // set the fill color to purple (you could set it to whatever you want)
+                context.setFill(Color.PURPLE);
+                // set the font, from a new font, constructed from the system one, with size 20
+                context.setFont(new Font(20));
+                // check if value of coressponding array position is not 0
+                if(player[row][col]!=0) {
+                    // draw the number
+                    context.fillText(player[row][col] + "", position_x, position_y);
+                }
+            }
+        }
     }
 
     public void canvasMouseClicked(){
