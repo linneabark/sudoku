@@ -138,5 +138,33 @@ public class Controller implements Initializable {
 
 
     }
+
+    public void buttonOnePressed(){
+
+    }
+    public void buttonTwoPressed(){
+
+    }
+    public void buttonThreePressed(){
+
+    }
+    public void buttonFourPressed(){
+
+    }
+    public void buttonFivePressed(){
+
+    }
+    public void buttonSixPressed(){
+
+    }
+    public void buttonSevenPressed(){
+
+    }
+    public void buttonEightPressed(){
+
+    }
+    public void buttonNinePressed(){
+        
+    }
 }
 
