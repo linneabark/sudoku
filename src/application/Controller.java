@@ -140,31 +140,52 @@ public class Controller implements Initializable {
     }
 
     public void buttonOnePressed(){
+        // The only thing that changes between all nine methods is the value we are injecting
+        // in the player array. In this case, it is 1, because it corresponds to the button.
+        gameboard.modifyPlayer(1, player_selected_row, player_selected_col);
 
+        // refresh our canvas
+        drawOnCanvas(canvas.getGraphicsContext2D());
     }
     public void buttonTwoPressed(){
+        gameboard.modifyPlayer(2, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonThreePressed(){
+        gameboard.modifyPlayer(3, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonFourPressed(){
+        gameboard.modifyPlayer(4, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonFivePressed(){
+        gameboard.modifyPlayer(5, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonSixPressed(){
+        gameboard.modifyPlayer(6, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonSevenPressed(){
+        gameboard.modifyPlayer(7, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonEightPressed(){
+        gameboard.modifyPlayer(8, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
 
     }
     public void buttonNinePressed(){
-        
+        gameboard.modifyPlayer(9, player_selected_row, player_selected_col);
+        drawOnCanvas(canvas.getGraphicsContext2D());
+
     }
 }
 
