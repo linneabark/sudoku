@@ -11,6 +11,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 import static javafx.scene.paint.Color.WHITE;
 
@@ -82,6 +83,37 @@ public class Controller implements Initializable {
         context.setLineWidth(5);
         // draw a strokeRoundRect using the same technique we used for drawing our board.
         context.strokeRoundRect(player_selected_col * 50 + 2, player_selected_row * 50 + 2, 46, 46, 10, 10);
+
+        // draw the initial numbers from our GameBoard instance
+        int[][] initial = gameboard.getInitial();
+
+        // for loop is the same as before
+        for(int row = 0; row<9; row++) {
+            for(int col = 0; col<9; col++) {
+
+                // finds the y position of the cell, by multiplying the row number by 50, which
+                // is the height of a row in pixels then adds 2, to add some offset
+                int position_y = row * 50 + 30;
+
+                // finds the x position of the cell, by multiplying the column number by 50,
+                // which is the width of a column in pixels then add 2, to add some offset
+                int position_x = col * 50 + 20;
+
+                // set the fill color to white (you could set it to whatever you want)
+                context.setFill(Color.BLACK);
+
+                // set the font, from a new font, constructed from the system one, with size 20
+                context.setFont(new Font("Times Roman", 20));
+
+                // check if value of coressponding initial array position is not 0, remember that
+                // we treat zeroes as squares with no values.
+                if(initial[row][col]!=0) {
+
+                    // draw the number using the fillText method
+                    context.fillText(initial[row][col] + "", position_x, position_y);
+                }
+            }
+        }
     }
 
     public void canvasMouseClicked(){
@@ -103,6 +135,8 @@ public class Controller implements Initializable {
             //get the canvas graphics context and redraw
             drawOnCanvas(canvas.getGraphicsContext2D());
         });
+
+
     }
 }
 
