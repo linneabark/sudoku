@@ -70,6 +70,30 @@ public class GameBoard {
         }
     }
 
+    public boolean chechForSuccess(){
+        for(int row = 0; row<9; row++) {
+            for(int col = 0; col<9; col++) {
+
+                // if the value in the initial array is zero, which means
+                // the player has to input a value in the square
+                if(initial[row][col] == 0) {
+
+                    // check if the player value corresponds to the solution value
+                    // and if it doesn't:
+                    if(player[row][col] != solution[row][col]) {
+
+                        // return false, which will tell us there has been a mistake
+                        // and that is enough for us to know the player hasn't solved
+                        // the puzzle
+                        return false;
+                    }
+                }
+            }
+        }
+        // otherwise, if everything is correct, return true
+        return true;
+    }
+
 
 
 }
